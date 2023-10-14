@@ -66,4 +66,4 @@ yarl==1.9.2
 zarr==2.16.1
 zipp==3.17.0
 zstandard==0.21.0
-pangeo-forge-recipes @ git+https://github.com/ranchodeluxe/pangeo-forge-recipes@8db57303fb81b16a90b5648aeb554759908675f6
+#pangeo-forge-recipes @ git+https://github.com/ranchodeluxe/pangeo-forge-recipes@8db57303fb81b16a90b5648aeb554759908675f6
