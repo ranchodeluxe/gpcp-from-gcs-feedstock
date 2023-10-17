@@ -1,5 +1,4 @@
 #numcodecs==0.11.0
-fsspec==2022.10.0
 apache-beam==2.42.0
 pangeo-forge-recipes==0.10.3
 #git+https://github.com/ranchodeluxe/pangeo-forge-recipes@2c0749bde9c8c87f8441d732a0a7d23cf295b9f1#egg=pangeo-forge-recipes
