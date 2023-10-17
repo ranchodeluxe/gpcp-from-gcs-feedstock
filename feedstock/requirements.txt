@@ -1,4 +1,4 @@
 #numcodecs==0.11.0
 apache-beam==2.42.0
 #pangeo-forge-recipes==0.10.3
-git+https://github.com/ranchodeluxe/pangeo-forge-recipes@b6a8a5f2b63f340bf40be3898739b0b97477dae1#egg=pangeo-forge-recipes
+git+https://github.com/ranchodeluxe/pangeo-forge-recipes@b170ce6b6b79045a7aedddb6d85c358d275916ac#egg=pangeo-forge-recipes
