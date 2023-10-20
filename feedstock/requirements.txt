@@ -1,4 +1,4 @@
 apache-beam==2.51.0
-pangeo-forge-recipes==0.10.3
 s3fs
-#git+https://github.com/ranchodeluxe/pangeo-forge-recipes@b170ce6b6b79045a7aedddb6d85c358d275916ac#egg=pangeo-forge-recipes
+#pangeo-forge-recipes==0.10.3
+git+https://github.com/ranchodeluxe/pangeo-forge-recipes@b170ce6b6b79045a7aedddb6d85c358d275916ac#egg=pangeo-forge-recipes
