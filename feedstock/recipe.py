@@ -6,7 +6,7 @@ from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, S
 
 dates = [
     d.to_pydatetime().strftime('%Y%m%d')
-    for d in pd.date_range("1996-10-01", "1997-10-31", freq="D")
+    for d in pd.date_range("1996-10-01", "1999-02-01", freq="D")
 ]
 
 def make_url(time):
