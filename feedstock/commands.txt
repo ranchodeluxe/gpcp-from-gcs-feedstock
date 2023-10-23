@@ -12,12 +12,25 @@ pangeo-forge-runner bake \
     --repo=https://github.com/ranchodeluxe/gpcp-from-gcs-feedstock.git  \
     --ref="test/integration" \
     -f /Users/ranchodeluxe/apps/gpcp-from-gcs-feedstock/feedstock/runner_config.py \
-    --FlinkOperatorBakery.job_manager_resources='{"memory": "2048m", "cpu": 1.0}' \
+    --FlinkOperatorBakery.job_manager_resources='{"memory": "6144m", "cpu": 1.0}' \
     --FlinkOperatorBakery.task_manager_resources='{"memory": "6144m", "cpu": 1.0}' \
-    --FlinkOperatorBakery.flink_configuration='{"taskmanager.numberOfTaskSlots": "1", "taskmanager.memory.flink.size": "3072m", "taskmanager.memory.task.off-heap.size": "1024m", "taskmanager.memory.jvm-overhead.max": "3072m"}' \
+    --FlinkOperatorBakery.flink_configuration='{"taskmanager.numberOfTaskSlots": "1", "taskmanager.memory.flink.size": "3072m", "taskmanager.memory.task.off-heap.size": "1024m", "taskmanager.memory.jvm-overhead.max": "4096m"}' \
+    --FlinkOperatorBakery.parallelism=1 \
+    --FlinkOperatorBakery.flink_version="1.16" \
+    --Bake.container_image='apache/beam_python3.9_sdk:2.47.0' \
+    --Bake.job_name=recipe \
+    --Bake.bakery_class="pangeo_forge_runner.bakery.flink.FlinkOperatorBakery"
+
+pangeo-forge-runner bake \
+    --repo=https://github.com/ranchodeluxe/leap-pgf-example.git  \
+    --ref="test/integration" \
+    -f /Users/ranchodeluxe/apps/leap-pgf-example/feedstock/runner_config.py \
+    --FlinkOperatorBakery.job_manager_resources='{"memory": "6144m", "cpu": 2.0}' \
+    --FlinkOperatorBakery.task_manager_resources='{"memory": "6144m", "cpu": 2.0}' \
+    --FlinkOperatorBakery.flink_configuration='{"taskmanager.numberOfTaskSlots": "1", "taskmanager.memory.flink.size": "3072m", "taskmanager.memory.task.off-heap.size": "1024m", "taskmanager.memory.jvm-overhead.max": "4096m"}' \
     --FlinkOperatorBakery.parallelism=1 \
     --FlinkOperatorBakery.flink_version="1.15" \
-    --FlinkOperatorBakery.beam_executor_resources='{"requests": {"cpu": 2.0, "memory": 4096}}' \
-    --Bake.container_image='apache/beam_python3.9_sdk:2.51.0' \
-    --Bake.job_name=recipe \
+    --FlinkOperatorBakery.beam_executor_resources='{"requests": {"cpu": 2.0, "memory": 6144}}' \
+    --Bake.container_image='apache/beam_python3.9_sdk:2.42.0' \
+    --Bake.job_name=agcd \
     --Bake.bakery_class="pangeo_forge_runner.bakery.flink.FlinkOperatorBakery"
