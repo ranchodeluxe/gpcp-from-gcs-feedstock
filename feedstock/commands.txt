@@ -10,7 +10,7 @@ pangeo-forge-runner bake \
 
 pangeo-forge-runner bake \
     --repo=https://github.com/ranchodeluxe/gpcp-from-gcs-feedstock.git  \
-    --ref="fix/integration-test" \
+    --ref="test/integration" \
     -f /Users/ranchodeluxe/apps/gpcp-from-gcs-feedstock/feedstock/runner_config.py \
     --FlinkOperatorBakery.job_manager_resources='{"memory": "1024m", "cpu": 1.0}' \
     --FlinkOperatorBakery.task_manager_resources='{"memory": "1024m", "cpu": 1.0}' \

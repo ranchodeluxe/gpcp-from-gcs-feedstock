@@ -1,2 +1,2 @@
 s3fs==2023.9.2
-git+https://github.com/pangeo-forge/pangeo-forge-recipes@a37c01b438a7cef9095b7375b992336d8411b9ce#egg=pangeo-forge-recipes
+git+https://github.com/pangeo-forge/pangeo-forge-recipes@e2f380bf864537d2def53fcb1801bc2b2c4b43f3#egg=pangeo-forge-recipes
