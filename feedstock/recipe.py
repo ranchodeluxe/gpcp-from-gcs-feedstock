@@ -1,6 +1,8 @@
 import apache_beam as beam
 import pandas as pd
+from dataclasses import dataclass
 
+from pangeo_forge_recipes.config import RecipeConfig
 from pangeo_forge_recipes.patterns import ConcatDim, FilePattern
 from pangeo_forge_recipes.transforms import OpenURLWithFSSpec, OpenWithXarray, StoreToZarr
 
@@ -17,12 +19,24 @@ def make_url(time):
 concat_dim = ConcatDim("time", dates, nitems_per_file=1)
 pattern = FilePattern(make_url, concat_dim)
 
+recipe_config = RecipeConfig()
 
+@dataclass
+class MyCustomTransform(beam.PTransform):
+     target_root: None
+
+     def expand(self, pcoll: beam.PCollection):
+         import logging
+         logger = logging.getLogger("pangeo_forge_runner")
+         logger.error(f"[ RUNTIME CONFIG ]: {self.target_root}")
+         return pcoll
+   
 
 recipe = (
     beam.Create(pattern.items())
     | OpenURLWithFSSpec()
     | OpenWithXarray(file_type=pattern.file_type, xarray_open_kwargs={"decode_coords": "all"})
+    | MyCustomTransform(target_root=recipe_config.target_root)
     | StoreToZarr(
         store_name="gpcp",
         combine_dims=pattern.combine_dim_keys,
